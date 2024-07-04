@@ -1,11 +1,11 @@
 {
   "name": "markdown-editor-backend",
   "version": "1.0.0",
-  "main": "src/server.ts",
+  "main": "api/index.ts",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "start:dev": "nodemon src/index.ts",
+    "start": "ts-node api/index.ts",
+    "start:dev": "nodemon api/index.ts",
     "build": "tsc",
     "test": "jest"
   },
