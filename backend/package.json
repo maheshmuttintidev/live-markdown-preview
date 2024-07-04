@@ -4,8 +4,8 @@
   "main": "src/server.ts",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node src/server.ts",
-    "start:dev": "nodemon src/server.ts",
+    "start": "ts-node src/index.ts",
+    "start:dev": "nodemon src/index.ts",
     "build": "tsc",
     "test": "jest"
   },
