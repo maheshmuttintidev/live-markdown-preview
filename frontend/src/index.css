@@ -1,68 +1,97 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* global.css */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  font-family: "Open Sans", sans-serif;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* Reset and style markdown elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote,
+pre,
+code,
+hr,
+table,
+th,
+td {
+  @apply m-0 p-0;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  @apply text-3xl font-bold mt-4 mb-2;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h2 {
+  @apply text-2xl font-bold mt-4 mb-2;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+h3 {
+  @apply text-xl font-bold mt-3 mb-2;
+}
+
+h4 {
+  @apply text-lg font-bold mt-3 mb-2;
+}
+
+h5 {
+  @apply text-base font-bold mt-2 mb-1;
+}
+
+h6 {
+  @apply text-sm font-bold mt-2 mb-1;
+}
+
+p {
+  @apply mt-2 mb-4 leading-relaxed;
+}
+
+ul {
+  @apply list-disc list-inside mt-2 mb-4;
+}
+
+ol {
+  @apply list-decimal list-inside mt-2 mb-4;
+}
+
+li {
+  @apply mt-1 mb-1;
+}
+
+blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic mt-4 mb-4;
+}
+
+pre {
+  @apply bg-gray-100 rounded p-4 overflow-auto mt-4 mb-4;
+}
+
+code {
+  @apply bg-gray-200 rounded px-1 py-0.5;
+}
+
+hr {
+  @apply border-t-2 border-gray-300 my-4;
+}
+
+table {
+  @apply table-auto w-full mt-4 mb-4;
+}
+
+th {
+  @apply border px-4 py-2 bg-gray-100 font-bold;
+}
+
+td {
+  @apply border px-4 py-2;
 }

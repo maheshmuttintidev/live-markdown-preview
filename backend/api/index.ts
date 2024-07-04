@@ -20,5 +20,5 @@ app.post("/convert-to-html", (req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(`server listening on port http://localhost:${port}`);
+  console.log(`server listening on port ${port}`);
 });
