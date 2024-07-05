@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import Logo from "/logo.webp";
+import hljs from "highlight.js";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -17,6 +18,8 @@ const App: React.FC = () => {
           markdown,
         });
         setHtml(data?.html);
+        hljs.highlightAll();
+
         setError("");
       } catch (err) {
         setError("Oops! Something went wrong");
@@ -50,7 +53,9 @@ const App: React.FC = () => {
           <textarea
             className="w-full h-full p-4 border-r border-gray-300 outline-none"
             value={markdown}
-            onChange={(e) => setMarkdown(e.target.value)}
+            onChange={(e) => {
+              setMarkdown(e.target.value);
+            }}
             placeholder="Type your Markdown here..."
           />
         </section>
