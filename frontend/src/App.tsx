@@ -15,13 +15,14 @@ const App: React.FC = () => {
         const { data } = await axios.post(`${API_URL}/convert-to-html`, {
           markdown,
         });
-        setHtml(data?.html);
-
-        setError('');
+        if (data?.success === true) {
+          setHtml(data?.html);
+          setError('');
+        } else if (data?.success === false) {
+          setError(data?.message);
+        }
       } catch (err) {
         setError('Oops! Something went wrong');
-      } finally {
-        setError('');
       }
     };
     convertMarkdownToHtml();
@@ -42,25 +43,19 @@ const App: React.FC = () => {
             Live Markdown Preview | Mahesh Muttinti
           </h1>
         </nav>
-        <section>
-          {error ? <p className="text-red-500">{error}</p> : null}
-        </section>
+        {error ? (
+          <div className="bg-red-200 pt-1">
+            <p className="text-red-500 pb-2 text-center">{error}</p>
+          </div>
+        ) : null}
 
-        <main className="flex h-screen bg-[url('/banner_image.webp')] bg-cover bg-no-repeat bg-center">
-          <section className="w-1/2 ">
+        <main className="flex h-screen bg-[url('/banner_image.webp')] bg-cover bg-no-repeat bg-center pt-0 border border-1 mt-0">
+          <section className="w-1/2">
             <textarea
               className="w-full h-full p-4 border-r border-gray-300 outline-none"
               value={markdown}
               onChange={(e) => {
-                const value = e.target.value;
-                const regex = /<\/?[\w\s="/.':;#-\\/\\?]+>/gi;
-                const isHtml = regex.test(value);
-                if (isHtml) {
-                  setError('Please enter valid markdown text');
-                } else {
-                  setError('');
-                  setMarkdown(e.target.value);
-                }
+                setMarkdown(e.target.value);
               }}
               placeholder="Type your Markdown here..."
             />
