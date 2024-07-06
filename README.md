@@ -8,19 +8,22 @@ Explore a new Markdown previewer that makes editing easy. It uses React for a sm
 
 #### Setup
 
-1. Install dependencies: `yarn`
-2. Start the development server: `yarn dev`
-3. The application will be running on `http://localhost:5173`
+1. Change the directory: `cd frontend`
+2. Add `.env` file and add `VITE_API_URL=http://localhost:5000` and save it
+3. Install dependencies: `yarn`
+4. Start the development server: `yarn dev`
+5. The application will be running on `http://localhost:5173`
 
 
 ### Backend
 
 #### Setup
 
-1. Install dependencies: `yarn`
-2. Start the server: `yarn start:dev`
-3. The server will be running on `http://localhost:5000`
-4. Run tests: `yarn test`
+1. Change the directory: `cd frontend`
+2. Install dependencies: `yarn`
+3. Start the server: `yarn start:dev`
+4. The server will be running on `http://localhost:5000`
+5. Run tests: `yarn test`
 
 #### API Reference
 
