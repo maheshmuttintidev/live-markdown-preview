@@ -15,6 +15,9 @@ app.get("/", (req: Request, res: Response) => {
 
 app.post("/convert-to-html", (req: Request, res: Response) => {
   const { markdown } = req.body;
+  if (!markdown) {
+    throw new Error("Please provide a markdown");
+  }
   const html = marked.parse(markdown);
   res.json({ html });
 });
