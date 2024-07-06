@@ -30,10 +30,12 @@ jobs:
 
       - name: Run tests
         run: npm test
-      - name: Build project
-        run: npm run build
 
-      # below step is packing the output as js code instead of API response
+      # below steps are packing the output as js code instead of API response
+
+      # - name: Build project
+      #   run: npm run build
+
       # - name: Deploy to Vercel
       #   run: vercel --prod
       #   env:
